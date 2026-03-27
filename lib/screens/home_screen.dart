@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'scanner_screen.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -51,7 +52,12 @@ class HomeScreen extends StatelessWidget {
             Expanded(
               child: ElevatedButton.icon(
                 onPressed: () {
-                  print("Barcode scan tapped");
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const ScannerScreen(),
+                    ),
+                  );
                 },
                 icon: const Icon(Icons.qr_code_scanner, size: 40),
                 label: const Text(

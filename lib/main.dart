@@ -1,8 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'screens/main_screen.dart';
+import 'providers/user_provider.dart';
 
 void main() {
-  runApp(const FoodCheckApp());
+  runApp(
+    MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (_) => UserProvider()..loadPreferences()),
+      ],
+      child: const FoodCheckApp(),
+    ),
+  );
 }
 
 class FoodCheckApp extends StatelessWidget {

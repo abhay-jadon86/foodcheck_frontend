@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'scanner_screen.dart';
+import 'photo_scanner_screen.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -79,8 +80,12 @@ class HomeScreen extends StatelessWidget {
             Expanded(
               child: ElevatedButton.icon(
                 onPressed: () {
-                  // TODO: Navigate to Photo Scanner
-                  print("Photo scan tapped");
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const PhotoScannerScreen(),
+                    ),
+                  );
                 },
                 icon: const Icon(Icons.document_scanner_outlined, size: 40),
                 label: const Text(
